@@ -29,6 +29,20 @@ func AddToCart(c *gin.Context) {
 
 	c.IndentedJSON(
 		http.StatusOK,
-		gin.H{"categories": cart},
+		gin.H{"cart": cart},
+	)
+}
+
+func DeleteFromCart(c *gin.Context) {
+	user, _ := c.Get("user")
+
+	userId := user.(models.User).Email
+	productId := c.Param("id")
+
+	cart := models.DeletCartByProductId(userId, productId)
+
+	c.IndentedJSON(
+		http.StatusOK,
+		gin.H{"cart": cart},
 	)
 }
