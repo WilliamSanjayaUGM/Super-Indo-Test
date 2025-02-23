@@ -20,6 +20,7 @@ func main() {
 	router.POST("/products", controllers.GetListProducts)
 	router.GET("/products/:id", controllers.GetProductById)
 	router.POST("/cart", middlewares.AuthMiddleware, controllers.AddToCart)
+	router.POST("/cart/:id", middlewares.AuthMiddleware, controllers.DeleteFromCart)
 
 	router.POST("/signup", controllers.Signup)
 	router.POST("/login", controllers.Login)
