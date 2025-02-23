@@ -17,7 +17,7 @@ func ConnectDatabase() {
 		"pg-william-testing-williams-project-super-indo.l.aivencloud.com",
 		"13608",
 		"avnadmin",
-		"AVNS_z0l3yS9e-uF014T_moO",
+		"password",
 		"defaultdb",
 	)
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{
