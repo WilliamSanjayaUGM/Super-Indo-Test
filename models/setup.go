@@ -36,6 +36,8 @@ func DBMigrate() {
 	DB.AutoMigrate(&User{})
 	DB.AutoMigrate(&Category{})
 	DB.AutoMigrate(&Product{})
+	DB.AutoMigrate(&ProductCart{})
+	DB.AutoMigrate(&Cart{})
 	DB.Create(&Categories)
 	DB.Create(&Products)
 }
